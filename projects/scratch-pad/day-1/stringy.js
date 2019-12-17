@@ -14,11 +14,9 @@
  */
 function length(string) {
     // YOUR CODE BELOW HERE //
-    
-
-return string.length;
+    return string.length;
     // YOUR CODE ABOVE HERE //
-};
+}
 
 /**
  * Given an input String, return a new String forced to lowercase.

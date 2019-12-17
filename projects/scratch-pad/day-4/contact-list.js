@@ -36,8 +36,16 @@
  */
 
 // YOUR CODE GOES BELOW HERE //
-function makeContact(id, nameFirst, nameLast) {
+// create a factory function called makeContact(id, nameFirst, nameLast, that returns a contact object)
+// create a factory function calld makeContactList that returns an object that managaes contacts
 
+function makeContact(id, nameFirst, nameLast) {
+var obj = {
+    id:id,
+    nameFirst: nameFirst,
+    nameLast: nameLast
+};
+return obj;
 } 
 
 
@@ -45,15 +53,7 @@ function makeContactList() {
     /*
      * You need something here to hold contacts. See length api for a hint:
      */
-    var contacts;
     
-    return {
-        // we implemented the length api for you //
-        length: function() {
-            return contacts.length;
-        }
-    }
-}
 
 
 

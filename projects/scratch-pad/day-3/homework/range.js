@@ -27,7 +27,7 @@ function range(start, end) {
     //this returns an array containing all intgers between the 2 parameters incsively 
     //use the push method in this 
     var array = [];
-    for (i = 0; i < array.length; i++){
+    for (var i = 0; i < array.length; i++){
         array.push(i);
     }
     

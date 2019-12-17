@@ -14,15 +14,14 @@
  */
 function isArray(value) {
     // YOUR CODE BELOW HERE //
+    // givin an input value return true if the value is an array, false otherwise
     if (Array.isArray(value)){
-        return true
+        return true;
     }
     
     else {
         return false 
     }
-    
-    
     
     // YOUR CODE ABOVE HERE //
 }
@@ -40,13 +39,26 @@ function isObject(value) {
     // givin an input value return true if the value is an object
     //intended as a collection?
     // return false otherwise 
-    if (typeOf(value) === "object"){
-        return true
+   if(value instanceof Date){
+        return false;
+    } else if(value === null){
+        return false;
+    }
+    else if(Array.isArray(value)){
+        return false
+    }
+    else if(typeof(value) === 'object'){
+        return true;
     }
     else {
         return false
     }
     
+    // if(typeof(value) === 'object' && value !== new Date() && value !== null && !Array.isArray(value)){
+    //     return true;
+    // } else {
+    //     return
+    // }
     
     
     
@@ -61,13 +73,26 @@ function isObject(value) {
  */
 function isCollection(value) {
     // YOUR CODE BELOW HERE //
-    if (Array.isArray(value)){
-        return true 
+    // if (Array.isArray(value)){
+    //     return true 
+    // }
+    // else {
+    //     return false 
+    // }
+    if(value instanceof Date){
+        return false;
+    } else if(value === null){
+        return false;
+    }
+    else if(Array.isArray(value)){
+        return true
+    }
+    else if(typeof(value) === 'object' ){
+        return true;
     }
     else {
-        return false 
+        return false
     }
-    
     
     // YOUR CODE ABOVE HERE //
 }
@@ -93,35 +118,39 @@ function isCollection(value) {
  */ 
 function typeOf(value) {
     // YOUR CODE BELOW HERE //
- if (typeOf(value) === "string"){
+    
+ if (value instanceof Date){
+    return "date";
+    }
+ else if (typeof(value) === "string"){
      return "string";
 }
-    if (Array.isArray(value)){
+    else if (Array.isArray(value)){
         return "array";
     }
-    if (typeOf(value) === "object"){
-        return "object";
+    
+    else if (value === undefined ){
+        return "undefined";
     }
-    if (value === undefined ){
-        return "undfined";
-    }
-    if (typeOf(value) === "number"){
+    else if (typeof(value) === "number"){
         return "number"; 
     }
-    if (typeOf(value) === "boolean"){
+    else if (typeof(value) === "boolean"){
         return "boolean";
     }
     
-    if (value === null){
+    else if (value === null){
         return "null";
+    } 
+    
+    else if (typeof(value) === "object") {
+        return "object";
     }
-    if (typeOf(value) === "function"){
+    else if (typeof(value) === "function"){
         return "function";
     }
     
-    if (typeOf(value) === "date"){
-    return "dates";
-    }
+   
     
     // YOUR CODE ABOVE HERE //
 };
